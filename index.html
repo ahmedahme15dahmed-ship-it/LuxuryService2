@@ -2,12 +2,113 @@
 <html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/diamond.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Luxury Gemini Assistant</title>
+    <title>Luxury AI - مساعد ذكي فاخر</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div id="app"></div>
+    <div id="loading-screen" class="loading-screen">
+      <div class="loading-content">
+        <div class="diamond-logo">
+          <svg viewBox="0 0 100 100" class="diamond-svg">
+            <polygon points="50,10 80,35 50,90 20,35" fill="url(#diamondGradient)" stroke="#c0c0c0" stroke-width="2"/>
+            <defs>
+              <linearGradient id="diamondGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.9" />
+                <stop offset="50%" style="stop-color:#c0c0c0;stop-opacity:0.8" />
+                <stop offset="100%" style="stop-color:#808080;stop-opacity:0.7" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <h1 class="loading-title">Luxury AI</h1>
+        <div class="loading-bar">
+          <div class="loading-progress"></div>
+        </div>
+        <p class="loading-text">جاري التحميل...</p>
+      </div>
+    </div>
+
+    <div id="app" class="app-hidden">
+      <header class="header">
+        <div class="header-content">
+          <div class="logo-container">
+            <div class="diamond-logo small">
+              <svg viewBox="0 0 100 100" class="diamond-svg">
+                <polygon points="50,10 80,35 50,90 20,35" fill="url(#headerDiamondGradient)" stroke="#c0c0c0" stroke-width="2"/>
+                <defs>
+                  <linearGradient id="headerDiamondGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.9" />
+                    <stop offset="50%" style="stop-color:#c0c0c0;stop-opacity:0.8" />
+                    <stop offset="100%" style="stop-color:#808080;stop-opacity:0.7" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <h1 class="site-title">Luxury AI</h1>
+          </div>
+          <p class="site-subtitle">مساعد ذكي فاخر للبرمجة والتطوير</p>
+        </div>
+      </header>
+
+      <main class="main">
+        <div class="chat-container">
+          <div class="messages" id="messages">
+            <div class="message assistant">
+              <div class="message-avatar">
+                <div class="diamond-logo tiny">
+                  <svg viewBox="0 0 100 100" class="diamond-svg">
+                    <polygon points="50,10 80,35 50,90 20,35" fill="url(#avatarDiamondGradient)" stroke="#c0c0c0" stroke-width="2"/>
+                    <defs>
+                      <linearGradient id="avatarDiamondGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.9" />
+                        <stop offset="50%" style="stop-color:#c0c0c0;stop-opacity:0.8" />
+                        <stop offset="100%" style="stop-color:#808080;stop-opacity:0.7" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                </div>
+              </div>
+              <div class="message-content">
+                مرحباً بك في Luxury AI! أنا مساعدك الذكي المتخصص في البرمجة والتطوير. يمكنك رفع ملفات الكود (Lua, JavaScript, Python, وغيرها) وسأساعدك في تحليلها وتطويرها. كيف يمكنني مساعدتك اليوم؟
+              </div>
+            </div>
+          </div>
+          
+          <div class="input-section">
+            <div class="file-upload-area" id="fileUploadArea">
+              <input type="file" id="fileInput" accept=".lua,.js,.py,.html,.css,.json,.txt,.md" multiple hidden>
+              <div class="upload-content">
+                <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="17,8 12,3 7,8"></polyline>
+                  <line x1="12" y1="3" x2="12" y2="15"></line>
+                </svg>
+                <p>اسحب الملفات هنا أو انقر للاختيار</p>
+                <span class="file-types">Lua, JS, Python, HTML, CSS وغيرها</span>
+              </div>
+            </div>
+            
+            <div class="input-container">
+              <input 
+                type="text" 
+                id="messageInput" 
+                placeholder="اكتب رسالتك هنا أو ارفع ملف للتحليل..."
+                class="message-input"
+              />
+              <button id="sendButton" class="send-button">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22,2 15,22 11,13 2,9 22,2"></polygon>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
